@@ -24,9 +24,9 @@ const FilterControls:React.FC<FilterControlsProps> = ({cbGetFilterStr,cbGetFilte
 
     const formStyle ={ flexGrow: 1, width:"100%", padding:'20px',color:'gold', border: '2px solid gold', marginBottom:'20px'}
     const labelStyle ={ textAlign:'left',paddingLeft:'20px', fontSize:'20px', fontColor:'black' ,color:'gold', };
-    const radioStyle = { paddingLeft: '20px',border: '2px solid gold',marginBottom: '20px', '& .Mui-checked': { color: 'gold' } };
+    const radioStyle = { paddingLeft: '20px',border: '2px solid gold',marginBottom: '20px','& .Mui-checked': { color: 'gold' } };
     const colorStyle = { color:'gold', };
-    const defaultStyle = { paddingLeft:'20px', color:'gold', };
+    const defaultStyle = { paddingLeft:'20px', color:'gold', '& .Mui-checked': { color: 'gold' }, '& .Mui-desabled': { color: 'white' }};
     const selectStyle = { color:'gold', border: '2px solid gold',backgroundColor:'white'};
     const textFieldStyle = { border: '2px solid gold',marginBottom:'10px', backgroundColor:'white' ,'& .MuiOutlinedInput-root.Mui-focused': { color: 'gold' },};
 

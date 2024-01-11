@@ -37,7 +37,7 @@ const Filter: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        const filteredList = charactersSelector.filter((character) => {
+     const filteredList = charactersSelector.filter((character) => {
             const nameMatch = !filterStr || character.name.includes(filterStr);
             const massMatch = (!min || !max) || (character.mass >= +min && character.mass <= +max);
             const genderMatch = !gender || character.gender === gender;
@@ -47,7 +47,7 @@ const Filter: React.FC = () => {
         }).sort((a, b) => b.mass - a.mass);
 
         setList(filteredList);
-    }, [charactersSelector, filterStr, min, max, gender, film]);
+    }, [charactersSelector, filterStr, min, max, gender]);
 
     return (
         <>

@@ -15,8 +15,8 @@ const ListFilter: React.FC<ListPros> = ({list}) => {
         width: "100%",
         padding: '30px',
         backgroundColor: 'black',
-        border: '2px solid gold'
-    };
+        border: '2px solid gold',
+   };
     const color = {color: 'gold'};
     const row = {'&:last-child td, &:last-child th': {border: 0}};
     const text = {flexGrow: 1, width: "100%", paddingBottom: '10px', color: 'gold'};
