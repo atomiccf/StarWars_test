@@ -1,0 +1,9 @@
+.film_container{
+    flex-flow: column nowrap;
+}
+
+.load_text{
+    font-size: 25px;
+    color: gold;
+    margin-top: 20px;
+}

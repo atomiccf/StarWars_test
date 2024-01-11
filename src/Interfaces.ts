@@ -22,3 +22,14 @@ export  interface RootState {
    result:Result[];
 }
 
+export type Details = {
+    id: string | undefined,
+    name: string | undefined,
+    gender: string | undefined,
+    mass: number | undefined,
+    films: [] | undefined,
+    starships: [],
+    species: [],
+
+}
+

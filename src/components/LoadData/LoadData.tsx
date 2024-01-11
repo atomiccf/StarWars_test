@@ -1,17 +1,16 @@
-import React, {ReactNode, useEffect} from 'react'
+import React, {ReactNode, useEffect} from 'react';
 import {setResult} from "../../redux/characterSlice.ts";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
-
-
 
 interface LoadDataProps {
     children: ReactNode;
 }
 
-const LoadData:React.FC<LoadDataProps> = ({children}) => {
+const LoadData: React.FC<LoadDataProps> = ({children}) => {
     const dispatch = useDispatch();
-    const fetchData = async () => {
+
+    const fetchFilmsData = async () => {
         try {
             const response = await axios.get('https://swapi.dev/api/people', {});
             const characters = response.data.results;
@@ -29,7 +28,6 @@ const LoadData:React.FC<LoadDataProps> = ({children}) => {
                 return filmResponse.data;
             }));
 
-            // Update each character with its filmsData
             const charactersWithFilmsData = characters.map(character => ({
                 ...character,
                 films: character.films.map(filmUrl => {
@@ -37,26 +35,22 @@ const LoadData:React.FC<LoadDataProps> = ({children}) => {
                     return filmData || null;
                 }),
             }));
+
             dispatch(setResult(charactersWithFilmsData));
-            console.log(charactersWithFilmsData);
-            // Now, charactersWithFilmsData contains characters with filmsData information
+
+
         } catch (error) {
             console.error(error);
         }
     };
 
     useEffect(() => {
-
-
-        fetchData();
-
+        fetchFilmsData();
     }, [dispatch]);
 
-
-    return  <>
-    {children}
+    return <>
+        {children}
     </>;
-
 }
 
 export default LoadData;
