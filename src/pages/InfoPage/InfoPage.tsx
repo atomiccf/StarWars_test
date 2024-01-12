@@ -32,10 +32,9 @@ const InfoPage: React.FC = () => {
     const fetchStarships = async () => {
         try {
             const response = await axios.all(characterDetails.starships.map((endpoint) => axios.get(endpoint))).then(
-                (data) => data)
+                (data) => data);
 
             setStarship(response)
-            console.log(starshipState)
 
         } catch (e) {
             console.log(e)
@@ -67,16 +66,16 @@ const InfoPage: React.FC = () => {
     return (
         <Card sx={cardStyle}>
             <CardContent>
-                <Typography  gutterBottom sx={color} variant="h3" component="div">
+                <Typography align="center" gutterBottom sx={color} variant="h3" component="div">
                     {characterDetails.name}
                 </Typography>
-                <Typography sx={color} gutterBottom variant="h6" component="div">
+                <Typography align="center" sx={color} gutterBottom variant="h6" component="div">
                     Mass: {characterDetails.mass}
                 </Typography>
-                <Typography  gutterBottom sx={color} variant="h6" component="div">
+                <Typography align="center" gutterBottom sx={color} variant="h6" component="div">
                     Gender: {characterDetails.gender}
                 </Typography>
-                <Typography sx={texStyle} variant="body2" >
+                <Typography align="center" sx={texStyle} variant="body2" >
                     <h3>Films:</h3>
                     <ul>
                      {films.map(({title}, index: number) => (<li key={index}>{title}</li>))}
@@ -84,14 +83,14 @@ const InfoPage: React.FC = () => {
                 </Typography>
 
                 {starshipState &&
-                    <Typography sx={texStyle} variant="body2" >
+                    <Typography align="center" sx={texStyle} variant="body2" >
                         <h3>Starships:</h3>
                         <ul>{starshipState.map((item, index: number) => <li key={index}>{item.data.name}</li>)}</ul>
                     </Typography>
                 }
 
                 {!starshipState &&
-                    <Typography sx={texStyle} variant="body2" >
+                    <Typography align="center" sx={texStyle} variant="body2" >
                         <h3>Starships:</h3>
                         Starships:
                         None
@@ -99,14 +98,14 @@ const InfoPage: React.FC = () => {
                 }
 
                 {speciesState &&
-                    <Typography sx={texStyle} variant="body2" color="text.secondary">
+                    <Typography align="center" sx={texStyle} variant="body2" color="text.secondary">
                         <h3>Species:</h3>
                         <ul>{speciesState.map((item, index: number) => <li
                             key={index}>{item.data.name} {item.data.classification}</li>)}</ul>
                     </Typography>
                 }
                 {!speciesState &&
-                    <Typography sx={texStyle} variant="body2" color="text.secondary">
+                    <Typography align="center" sx={texStyle} variant="body2" color="text.secondary">
                         <h6>Species:</h6>
                     </Typography>
                 }
