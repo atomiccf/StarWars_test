@@ -27,9 +27,20 @@ export type Details = {
     name: string | undefined,
     gender: string | undefined,
     mass: number | undefined,
-    films: [] | undefined,
+    films: Film,
     starships: [],
     species: [],
 
 }
+
+export interface Film {
+    title: string;
+    episode:number;
+    opening_crawl:string;
+    director:string;
+    producer:string;
+}
+
+
+
 

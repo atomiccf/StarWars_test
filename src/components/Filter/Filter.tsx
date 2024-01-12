@@ -2,12 +2,17 @@ import {useSelector} from "react-redux";
 import {useState, useEffect,useCallback} from "react";
 import List from '../List/List';
 import FilterControls from "../FilterControls/FilterControls";
-
 import React from "react";
 
 
+
+
+
 const Filter: React.FC = () => {
+    // @ts-expect-error: state type error
     const charactersSelector = useSelector((state) => state.characters.result);
+    const character = useSelector((state) => state);
+    console.log(character)
     const [list, setList] = useState(charactersSelector);
     const [filterStr, setFilterStr] = useState<string>('');
     const [min, setMin] = useState<string>('');
@@ -51,7 +56,6 @@ const Filter: React.FC = () => {
 
     return (
         <>
-            {/* Импорт FilterControls */}
             <FilterControls
                 cbGetFilterStr={cbGetFilterStr}
                 cbGetFilterMin={cbGetFilterMin}
@@ -59,7 +63,6 @@ const Filter: React.FC = () => {
                 cbGetFilterRadio={cbGetFilterRadio}
                 cbGetFilterFilm={cbGetFilterFilm}
             />
-            {/* Импорт List */}
             <List list={list} />
         </>
     );

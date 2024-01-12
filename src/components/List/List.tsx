@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import './List.css';
 
 
+
 interface ListPros {
     list?: [] | undefined;
 }
@@ -21,13 +22,16 @@ const ListFilter: React.FC<ListPros> = ({list}) => {
     const row = {'&:last-child td, &:last-child th': {border: 0}};
     const text = {flexGrow: 1, width: "100%", paddingBottom: '10px', color: 'gold'};
 
+
+
     return (
         <>
             {!list || list.length === 0 && <div className='load_text'>Loading...</div>}
-
-            {list?.length > 0 &&
+            {/*
+              //  @ts-expect-error: list.length can be undefined */}
+            {list.length > 0 &&
                 <>
-                    <Typography sx={text} variant="h4">Character
+                    <Typography align="center" sx={text} variant="h4">Character
                         List</Typography>
                     <TableContainer sx={tableStyle} component={Paper}>
                         <Table sx={{minWidth: 650}} aria-label="simple table">
@@ -71,8 +75,10 @@ const ListFilter: React.FC<ListPros> = ({list}) => {
                                             <TableCell sx={color} align="center">{gender}</TableCell>
                                             <TableCell sx={color} align="center">{mass}</TableCell>
                                             <TableCell sx={color} align="right">
-                                                {Array.isArray(films) && films.map((item: string, index: number) =>
+                                                {Array.isArray(films) && films.map((item, index: number) =>
                                                     <div key={index} className='film_container'>
+                                                        {/*
+                                                        //  @ts-expect-error: item.title type error */}
                                                         <span>{item.title}</span></div>
                                                 )}
                                             </TableCell>

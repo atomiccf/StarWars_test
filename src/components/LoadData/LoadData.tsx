@@ -1,6 +1,6 @@
 import React, {ReactNode, useEffect} from 'react';
 import {setResult} from "../../redux/characterSlice.ts";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import axios from "axios";
 
 interface LoadDataProps {
@@ -11,6 +11,7 @@ const LoadData: React.FC<LoadDataProps> = ({children}) => {
     const dispatch = useDispatch();
 
     const fetchFilmsData = async () => {
+
         try {
             const response = await axios.get('https://swapi.dev/api/people', {});
             const characters = response.data.results;
@@ -21,9 +22,10 @@ const LoadData: React.FC<LoadDataProps> = ({children}) => {
                 return acc;
             }, []);
 
-            const uniqueFilmUrls = [...new Set(allFilmUrls)]; // Remove duplicates
+            const uniqueFilmUrls = [...new Set(allFilmUrls)];
 
-            const filmsData = await Promise.all(uniqueFilmUrls.map(async (filmUrl) => {
+            const filmsData = await axios.all(uniqueFilmUrls.map(async (filmUrl) => {
+            //@ts-expect-error: filmUrl type.
                 const filmResponse = await axios.get(filmUrl);
                 return filmResponse.data;
             }));

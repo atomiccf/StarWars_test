@@ -9,7 +9,10 @@ Run the command npm install.
 This creates a production-ready application in the "build" folder.
 It correctly bundles React in production mode and optimizes the build for best performance.
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
+### npm run dev
+This runs the application in development mode. Open  http://localhost:5173/ to view it in your browser.
+The page will reload when you make changes. You can also see any lint errors in the console.
+cle
 ## Used libraries:
 ### Axios (Promise based HTTP client for the browser and node.js)
 - Axios provides a simple and easy-to-use API for making HTTP requests.;

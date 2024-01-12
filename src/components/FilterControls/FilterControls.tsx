@@ -26,7 +26,7 @@ const FilterControls:React.FC<FilterControlsProps> = ({cbGetFilterStr,cbGetFilte
     const labelStyle ={ textAlign:'left',paddingLeft:'20px', fontSize:'20px', fontColor:'black' ,color:'gold', };
     const radioStyle = { paddingLeft: '20px',border: '2px solid gold',marginBottom: '20px','& .Mui-checked': { color: 'gold' } };
     const colorStyle = { color:'gold', };
-    const defaultStyle = { paddingLeft:'20px', color:'gold', '& .Mui-checked': { color: 'gold' }, '& .Mui-desabled': { color: 'white' }};
+    const defaultStyle = { paddingLeft:'20px', color:'gold', '& .Mui-checked': { color: 'gold' },};
     const selectStyle = { color:'gold', border: '2px solid gold',backgroundColor:'white'};
     const textFieldStyle = { border: '2px solid gold',marginBottom:'10px', backgroundColor:'white' ,'& .MuiOutlinedInput-root.Mui-focused': { color: 'gold' },};
 
@@ -53,7 +53,7 @@ const getFilterStr = (EO:React.ChangeEvent<HTMLInputElement>) => {
         <>
 
             <FormControl sx={formStyle} className='wrapper_formcontrol' fullWidth>
-                <Typography sx={colorStyle} variant="h4">Filter Controls</Typography>
+                <Typography align="center" sx={colorStyle} variant="h4">Filter Controls</Typography>
                 <FormControl>
                     <FormLabel  sx={labelStyle} id="radio_buttons_group_label">Gender</FormLabel>
                     <RadioGroup

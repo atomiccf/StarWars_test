@@ -79,7 +79,7 @@ const InfoPage: React.FC = () => {
                 <Typography sx={texStyle} variant="body2" >
                     <h3>Films:</h3>
                     <ul>
-                     {films.map((item: string, index: number) => (<li key={index}>{item.title}</li>))}
+                     {films.map(({title}, index: number) => (<li key={index}>{title}</li>))}
                     </ul>
                 </Typography>
 
