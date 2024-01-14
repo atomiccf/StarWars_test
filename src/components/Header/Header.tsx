@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import React from "react";
-import Logo from '../../assets/602bb87d5c5b2300043add96 (1).png'
+import Logo from '../../assets/logo.png'
 import  "./Header.css";
 
 const Header:React.FC = () =>{

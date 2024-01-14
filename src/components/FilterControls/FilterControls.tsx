@@ -28,7 +28,7 @@ const FilterControls:React.FC<FilterControlsProps> = ({cbGetFilterStr,cbGetFilte
     const colorStyle = { color:'gold', };
     const defaultStyle = { paddingLeft:'20px', color:'gold', '& .Mui-checked': { color: 'gold' },};
     const selectStyle = { color:'gold', border: '2px solid gold',backgroundColor:'white'};
-    const textFieldStyle = { marginBottom:'10px', backgroundColor:'white' ,'& .MuiOutlinedInput-root.Mui-focused': { color: 'black' },};
+    const textFieldStyle = { marginBottom:'10px', backgroundColor:'white' ,};
 
 const getFilterStr = (EO:React.ChangeEvent<HTMLInputElement>) => {
         cbGetFilterStr(EO.target.value);
@@ -71,7 +71,7 @@ const getFilterStr = (EO:React.ChangeEvent<HTMLInputElement>) => {
 
                 <FormControl sx={formStyle}>
                     <FormLabel sx={labelStyle} id="input_label_name">Search by name and Mass</FormLabel>
-                    <TextField InputLabelProps={{ style: { color: 'gold' }, }} sx={textFieldStyle} id="outlined-basic" label="Search by name" variant="outlined" onChange={getFilterStr} color="secondary" focused />
+                    <TextField InputLabelProps={{ style: { color: 'gold' }, }} sx={textFieldStyle} id="outlined-basic" label="Search by name" variant="outlined" onChange={getFilterStr}  />
                 </FormControl>
 
                 <FormControl sx={formStyle}>
