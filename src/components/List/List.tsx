@@ -17,7 +17,8 @@ const ListFilter: React.FC<ListPros> = ({list}) => {
         padding: '30px',
         backgroundColor: 'black',
         border: '2px solid gold',
-   };
+        overflowX:'hidden'
+         };
     const color = {color: 'gold'};
     const row = {'&:last-child td, &:last-child th': {border: 0}};
     const text = {flexGrow: 1, width: "100%", paddingBottom: '10px', color: 'gold'};
@@ -34,7 +35,7 @@ const ListFilter: React.FC<ListPros> = ({list}) => {
                     <Typography align="center" sx={text} variant="h4">Character
                         List</Typography>
                     <TableContainer sx={tableStyle} component={Paper}>
-                        <Table sx={{minWidth: 650}} aria-label="simple table">
+                        <Table sx={{minWidth: 650 ,}} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell sx={color}>Characters Name</TableCell>
