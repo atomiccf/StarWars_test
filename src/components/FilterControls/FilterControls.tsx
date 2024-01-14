@@ -23,12 +23,12 @@ interface FilterControlsProps {
 const FilterControls:React.FC<FilterControlsProps> = ({cbGetFilterStr,cbGetFilterMin,cbGetFilterMax,cbGetFilterRadio,cbGetFilterFilm}) => {
 
     const formStyle ={ flexGrow: 1, width:"100%", padding:'20px',color:'gold', border: '2px solid gold', marginBottom:'20px'}
-    const labelStyle ={ textAlign:'left',paddingLeft:'20px', fontSize:'20px', fontColor:'black' ,color:'gold', };
+    const labelStyle ={ marginBottom:'15px',textAlign:'left',paddingLeft:'20px', fontSize:'20px', fontColor:'black' ,color:'gold', };
     const radioStyle = { paddingLeft: '20px',border: '2px solid gold',marginBottom: '20px','& .Mui-checked': { color: 'gold' } };
     const colorStyle = { color:'gold', };
     const defaultStyle = { paddingLeft:'20px', color:'gold', '& .Mui-checked': { color: 'gold' },};
     const selectStyle = { color:'gold', border: '2px solid gold',backgroundColor:'white'};
-    const textFieldStyle = { border: '2px solid gold',marginBottom:'10px', backgroundColor:'white' ,'& .MuiOutlinedInput-root.Mui-focused': { color: 'gold' },};
+    const textFieldStyle = { marginBottom:'10px', backgroundColor:'white' ,'& .MuiOutlinedInput-root.Mui-focused': { color: 'black' },};
 
 const getFilterStr = (EO:React.ChangeEvent<HTMLInputElement>) => {
         cbGetFilterStr(EO.target.value);
@@ -71,7 +71,7 @@ const getFilterStr = (EO:React.ChangeEvent<HTMLInputElement>) => {
 
                 <FormControl sx={formStyle}>
                     <FormLabel sx={labelStyle} id="input_label_name">Search by name and Mass</FormLabel>
-                    <TextField InputLabelProps={{ style: { color: 'gold' }, }} sx={textFieldStyle} id="outlined-basic" label="Search by name" variant="outlined" onChange={getFilterStr} />
+                    <TextField InputLabelProps={{ style: { color: 'gold' }, }} sx={textFieldStyle} id="outlined-basic" label="Search by name" variant="outlined" onChange={getFilterStr} color="secondary" focused />
                 </FormControl>
 
                 <FormControl sx={formStyle}>
